@@ -22,6 +22,7 @@ A simple FastAPI-based backend for tracking your expenses. Users can register, l
 - **Auth**: JWT via python-jose
 
 ## 📁 Project Structure
+```
 expense-tracker/
 ├── app/
 │   ├── main.py # FastAPI app entry point
@@ -36,6 +37,7 @@ expense-tracker/
 ├── .env
 ├── requirements.txt
 └── alembic/
+```
 
 ## 🚀 Getting Started
 
