@@ -1,0 +1,26 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Python dotenv files
+.env
+
+# SQLite DB file (optional — if you don’t want to push it)
+# *.db
+
+# Alembic SQLite history (optional)
+alembic/versions/*.pyc
+
+# VS Code settings (if you're using it)
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
