@@ -1,4 +1,4 @@
-# 💸 Expense Tracker API
+# Expense Tracker API
 
 A simple FastAPI-based backend for tracking your expenses. Users can register, log in, and manage their own set of expenses categorized by type and date.
 
