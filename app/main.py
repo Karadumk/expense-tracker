@@ -1,13 +1,13 @@
 # File: app/main.py
-from fastapi import FastAPI, Depends, HTTPException
-from app.database import SessionLocal, get_db
+from fastapi import FastAPI, Depends
+from app.database import get_db
 from app import models
 from sqlalchemy.orm import Session
-from dotenv import load_dotenv
-import os
+from app.routers import users
 
 
 app = FastAPI()
+app.include_router(users.router)
 
 
 @app.get("/test-db")
