@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Float, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
 
+
 from .database import Base
 
 
@@ -29,3 +30,28 @@ class Expense(Base):
 
     # Relationship back to user
     owner = relationship("User", back_populates="expenses")
+
+
+class Token(Base):
+    __tablename__ = "tokens"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    access_token = Column(String, nullable=False)
+    token_type = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    # Relationship back to user
+    owner = relationship("User")
+
+
+class TokenData(Base):
+    __tablename__ = "token_data"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    token = Column(String, nullable=False)
+    expires_at = Column(DateTime, nullable=False)
+
+    # Relationship back to user
+    owner = relationship("User")
