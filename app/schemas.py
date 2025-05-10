@@ -5,6 +5,7 @@ from datetime import datetime
 
 # Used for request body when signing up
 class UserCreate(BaseModel):
+    username: str
     email: EmailStr
     password: str
 
