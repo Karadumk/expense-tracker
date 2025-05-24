@@ -7,7 +7,6 @@ from app import schemas, crud, database, auth
 from datetime import timedelta
 
 load_dotenv()
-print(f"Raw ACCESS_TOKEN_EXPIRE_MINUTES: {os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES')}")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
 
 router = APIRouter(prefix="/users", tags=["Users"])

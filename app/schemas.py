@@ -32,15 +32,18 @@ class ExpenseCreate(BaseModel):
     description: Optional[str] = None
 
 
+class ExpenseUpdate(BaseModel):
+    amount: Optional[float] = None
+    category: Optional[str] = None
+    description: Optional[str] = None
+    date: Optional[datetime] = None
+
+
 # Response schema
-class ExpenseResponse(BaseModel):
+class ExpenseOut(ExpenseCreate):
     id: int
     user_id: int
-    amount: float
-    category: str
-    description: Optional[str] = None
-    timestamp: datetime
-
+    
     class Config:
         orm_mode = True
 
